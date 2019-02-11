@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Profile Details</title>
+    <th:block th:include="layout/header"></th:block>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(resume)}">
+        <h2 align="center">All Resumes</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ProfileId</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>SkillSet</th>
+                <th>Location</th>
+                <th>Date of Birth</th>
+                <th>Qualification</th>
+                <th>experience</th>
+                <th>gender</th>
+                <th>EmailId</th>
+                <th>PhoneNumber</th>
+            </tr>
+            <tr th:each="r : ${resume}">
+                <td th:text="${r.profileid}">ProfileId</td>
+                <td th:text="${r.firstName}">FirstName</td>
+                <td th:text="${r.lastName}">LastName</td>
+                <td th:text="${r.skillSet}">SkillSet</td>
+                <td th:text="${r.location}">Location</td>
+                <td th:text="${r.dob}">Date of Birth</td>
+                <td th:text="${r.qualification}">Qualification</td>
+                <td th:text="${r.experience}">Experience</td>
+                <td th:text="${r.gender}">Gender</td>
+                <td th:text="${r.emailId}">EmailId</td>
+                <td th:text="${r.phoneNumber}">PhoneNumber</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

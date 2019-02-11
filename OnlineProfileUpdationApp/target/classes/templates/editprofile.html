@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Edit profile Details</title>
+    <th:block th:include="layout/employee-header"></th:block>
+</head>
+<body>
+<div class="container">
+    <h2>Profile Details</h2>
+    <div>
+        <form class="form-horizontal" th:object="${profiledetails}" th:action="@{/profileApp/employee/saveprofile}" method="post">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="hidden" class="form-control" th:field="*{profileid}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">First Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{firstName}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Last Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{lastName}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Skill Set:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{skillSet}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Location:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{location}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Date of Birth:</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" th:field="*{dob}" />
+                </div>
+            </div>
+             <div class="form-group">
+                <label class="col-sm-2 control-label">Qualification:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{qualification}" />
+                </div>
+            </div>
+             <div class="form-group">
+                <label class="col-sm-2 control-label">Experience:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" th:field="*{experience}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Gender:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{gender}" />
+                </div>
+            </div>
+             <div class="form-group">
+                <label class="col-sm-2 control-label">Email Id:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" th:field="*{emailId}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Phone Number:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" th:field="*{phoneNumber}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

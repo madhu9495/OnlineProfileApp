@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Job Details</title>
+    <th:block th:include="layout/employee-header"></th:block>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(job)}">
+        <h2 align="center">All Jobdetails</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>JobId</th>
+                <th>JobName</th>
+                <th>JobDescription</th>
+                <th>ProjectName</th>
+                <th>SkillsRequired</th>
+                <th>OptionalSkills</th>
+                <th>Location</th>
+                <th>EmployeeBand</th>
+                <th>Experience</th>
+                <th>NoOfPositions</th>
+                <th>EmailId</th>
+                <th>PhoneNumber</th>
+            </tr>
+            <tr th:each="j : ${job}">
+                <td th:text="${j.jobid}">JobId</td>
+                <td th:text="${j.jobName}">JobName</td>
+                <td th:text="${j.jobDescription}">JobDescription</td>
+                <td th:text="${j.projectName}">ProjectName</td>
+                <td th:text="${j.skillsRequired}">SkillsRequired</td>
+                <td th:text="${j.optionalSkills}">OptionalSkills</td>
+                <td th:text="${j.location}">Location</td>
+                <td th:text="${j.employeeBand}">EmployeeBand</td>
+                <td th:text="${j.experience}">Experience</td>
+                <td th:text="${j.noOfPositions}">NoOfPositions</td>
+                <td th:text="${j.emailId}">EmailId</td>
+                <td th:text="${j.phoneNumber}">PhoneNumber</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

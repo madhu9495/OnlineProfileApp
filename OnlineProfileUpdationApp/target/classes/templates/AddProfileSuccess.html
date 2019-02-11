@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Online - Profile App</title>
+    <th:block th:include="layout/employee-header"></th:block>
+</head>
+<body>
+     <h3 th:inline="text" align="center">ProfileDetails saved successfully and profile is, [[${profile.profileid}]]!</h3>
+</body>
+</html>

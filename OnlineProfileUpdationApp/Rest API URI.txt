@@ -1,0 +1,26 @@
+Login Page
+http://localhost:8080/profileApp/users/login
+
+----------------------------------------------------------------------------
+
+
+Trouble Shoot:
+
+Spring NoSuchBeanDefinitionException
+
+The reason is clearly indicated by Spring: 
+“expected at least 1 bean which qualifies as autowire candidate for this dependency“
+
+One reason Bean may not exist in the context – if beans are picked up automatically by classpath scanning, 
+and if BeanB is correctly annotated as a bean (@Component, @Repository, @Service, @Controller, etc) – 
+is that it may be defined in a package that is not scanned by Spring:
+--------------------------------------------------------------------------------------------
+
+Version-2.0
+
+Updates 
+
+---Profile entity and controller
+---Admin controller get mapping to delete mapping.
+
+

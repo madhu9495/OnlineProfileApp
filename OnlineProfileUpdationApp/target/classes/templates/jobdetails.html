@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>JobDetails</title>
+    <th:block th:include="layout/header"></th:block>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(jobdetails)}">
+        <h2 align="center">All Jobdetails</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>JobId</th>
+                <th>JobName</th>
+                <th>JobDescription</th>
+                <th>ProjectName</th>
+                <th>SkillsRequired</th>
+                <th>OptionalSkills</th>
+                <th>Location</th>
+                <th>EmployeeBand</th>
+                <th>Experience</th>
+                <th>NoOfPositions</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="jobdetail : ${jobdetails}">
+                <td th:text="${jobdetail.jobid}">JobId</td>
+                <td th:text="${jobdetail.jobName}">JobName</td>
+                <td th:text="${jobdetail.jobDescription}">JobDescription</td>
+                <td th:text="${jobdetail.projectName}">ProjectName</td>
+                <td th:text="${jobdetail.skillsRequired}">SkillsRequired</td>
+                <td th:text="${jobdetail.optionalSkills}">OptionalSkills</td>
+                <td th:text="${jobdetail.location}">Location</td>
+                <td th:text="${jobdetail.employeeBand}">EmployeeBand</td>
+                <td th:text="${jobdetail.experience}">Experience</td>
+                <td th:text="${jobdetail.noOfPositions}">NoOfPositions</td>
+                <td><a th:href="${'/profileApp/Admin/jobdetails/edit/' + jobdetail.jobid}" class="btn btn-default">Edit</a></td>
+                <td><a th:href="${'/profileApp/Admin/jobdetails/delete/' + jobdetail.jobid}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

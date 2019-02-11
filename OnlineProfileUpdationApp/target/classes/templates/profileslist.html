@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Profile Details</title>
+    <th:block th:include="layout/employee-header"></th:block>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(profiledetails)}">
+        <h2 align="center">All profiles</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ProfileId</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>SkillSet</th>
+                <th>Location</th>
+                <th>Date of Birth</th>
+                <th>Qualification</th>
+                <th>experience</th>
+                <th>gender</th>
+                <th>EmailId</th>
+                <th>gender</th>
+                <th>Edit</th>
+                <th>PhoneNumber</th>
+            </tr>
+            <tr th:each="profiledetail : ${profiledetails}">
+                <td th:text="${profiledetail.profileid}">ProfileId</td>
+                <td th:text="${profiledetail.firstName}">FirstName</td>
+                <td th:text="${profiledetail.lastName}">LastName</td>
+                <td th:text="${profiledetail.skillSet}">SkillSet</td>
+                <td th:text="${profiledetail.location}">Location</td>
+                <td th:text="${profiledetail.dob}">Date of Birth</td>
+                <td th:text="${profiledetail.qualification}">Qualification</td>
+                <td th:text="${profiledetail.experience}">Experience</td>
+                <td th:text="${profiledetail.gender}">Gender</td>
+                <td th:text="${profiledetail.emailId}">EmailId</td>
+                <td th:text="${profiledetail.phoneNumber}">PhoneNumber</td>
+                <td><a th:href="${'/profileApp/employee/profile/edit/' + profiledetail.profileid}" class="btn btn-default">Edit</a></td>
+                <td><a th:href="${'/profileApp/employee/profile/delete/' + profiledetail.profileid}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
